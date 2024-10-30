@@ -170,7 +170,7 @@ The `Aux heat only` switch is provided to disable use of the heat pump, only usi
 
 ### Number
 
-The `Aux Heat Cutover Threshold` number represents the outdoor temperature at which the heat pump will not run. This is represented in the temperature units you have selected in HomeAssistant; however, Ecobee allows configuration only in increments of 5 degrees Fahrenheit. This is represented in the thermostat user interface as well. 
+The `Aux Heat Cutover Threshold` number represents the outdoor temperature at which the heat pump will not run. This is represented in the temperature units you have selected in Home Assistant; however, ecobee allows configuration only in increments of 5 degrees Fahrenheit. This is represented in the thermostat user interface as well. 
 ## Actions
 
 Besides the standard actions provided by the Home Assistant [Climate](/integrations/climate/) integration, the following extra actions are provided by the ecobee integration:
