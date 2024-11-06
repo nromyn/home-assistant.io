@@ -143,7 +143,7 @@ The ecobee climate entity has some extra attributes to represent the state of th
 
 ### Concepts
 
-The ecobee thermostat supports the addition of an accessory. If you have an air exchanger (ventilator, HRV, or ERV), you can control it via the min time home and min time away numbers.
+The ecobee thermostat supports the addition of an accessory. If you have an air exchanger (ventilator, HRV, or ERV), you can control it via the minimum time home and minimum time away numbers.
 
 ### Switch
 
@@ -162,15 +162,17 @@ The `ventilator 20 min` switch is behaving like the switch in the physical ecobe
 
 ### Concepts 
 
-When a HVAC system is equipped with a heat pump, a form of auxiliary heat is usually included. This may also be referred to as 'Emergency Heat'. You can control whether the thermostat requests only auxiliary heat, and adjust the outdoor temperature at which the heat pump compressor will no longer be used, for example, in response to utility costs or solar production in a hybrid system - that is, a system that does not use electricity for the auxiliary heat (natural gas, propane, etc.). This applies more to air source heat pumps than geothermal. 
+When a HVAC system is equipped with a heat pump, a form of auxiliary heat is usually included. This may also be referred to as 'Emergency Heat'. You can control whether the thermostat requests only auxiliary heat, and adjust the outdoor temperature at which the heat pump compressor will no longer be used, for example, in response to utility costs or solar production in a hybrid system. A hybrid system refers to a system that does not use electricity for the auxiliary heat (natural gas, propane, etc.). This applies more to air source heat pumps than geothermal. 
 
 ### Switch
 
-The `Aux heat only` switch is provided to disable use of the heat pump, only using the auxiliary heater. 
+The `Auxiliary heat only` switch is provided to disable use of the compressor (heat pump), only using the auxiliary heater. Be careful with this setting, as it can incur additional utility costs from using a less-efficient heat source. 
 
 ### Number
 
-The `Aux Heat Cutover Threshold` number represents the outdoor temperature at which the heat pump will not run. This is represented in the temperature units you have selected in Home Assistant; however, ecobee allows configuration only in increments of 5 degrees Fahrenheit. This is represented in the thermostat user interface as well. 
+The `Compressor minimum temperature` number represents the outdoor temperature at which the compressor (heat pump) will not run. This is represented in the temperature units you have selected in Home Assistant; however, ecobee allows configuration only in increments of 5 degrees Fahrenheit. This is represented in the thermostat user interface as well. When the outdoor temperature is below this value, only auxiliary heat will be used. Be careful with this setting, as it can incur additional utility costs from using a less-efficient heat source.
+
+Check your heat pump Owners' Manual prior to adjusting this value; do not adjust it below the rated minimum operating temperature of the heat pump. **Failure to observe the rated minimum operating temperature can cause damage to the system**
 ## Actions
 
 Besides the standard actions provided by the Home Assistant [Climate](/integrations/climate/) integration, the following extra actions are provided by the ecobee integration:
