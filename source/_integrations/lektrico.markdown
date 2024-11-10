@@ -15,6 +15,7 @@ ha_platforms:
   - number
   - select
   - sensor
+  - switch
 ha_integration_type: device
 ---
 
@@ -23,6 +24,25 @@ The **Lektrico Charging Station** integration integrates your [Lektrico Charging
 The Lektrico Charging Station device will be added as a sensor in Home Assistant.
 
 {% include integrations/config_flow.md %}
+
+## Binary sensors
+
+Binary sensors available in the library:
+
+### Chargers
+
+| Condition         | Description                          |
+| :---------------- | :----------------------------------- |
+| state_e_activated | Electric vehicle error               |
+| overtemp          | Overtemperature                      |
+| critical_temp     | Critical temperature                 |
+| overcurrent       | Overcurrent                          |
+| meter_fault       | Meter fault                          |
+| undervoltage      | Undervoltage                         |
+| overvoltage       | Overvoltage                          |
+| rcd_error         | <abbr title="residual current device">RCD</abbr> error                            |
+| cp_diode_failure  | Electric vehicle communication error |
+| contactor_failure | Contactor failure                    |
 
 ## Sensors
 
